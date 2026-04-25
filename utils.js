@@ -1,5 +1,5 @@
-const usersBaseUrl = 'http://localhost:3000/api/users';
-const propertiesBaseUrl = 'http://localhost:3000/api/properties';
+const usersBaseUrl = 'https://fullstack-backend-0lup.onrender.com/api/users';
+const propertiesBaseUrl = 'https://fullstack-backend-0lup.onrender.com/api/properties';
 
 window.app = {
   getToken,
