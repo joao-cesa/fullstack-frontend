@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil - ImobCRUD</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <span class="logo">ImobCRUD</span>
+    <div class="nav-links">
+      <a href="properties.html">Imóveis</a>
+      <a href="users.html">Usuários</a>
+      <a href="profile.html" class="active">Meu Perfil</a>
+      <button id="logoutBtn" class="btn-logout-link">Sair</button>
+    </div>
+  </nav>
+
+  <div class="container main-content">
+    <h1>Perfil do Usuário</h1>
+    
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event, 'updateInfo')">Atualizar Perfil</button>
+      <button class="tab-link" onclick="openTab(event, 'changePass')">Mudar Senha</button>
+    </div>
+
+    <div id="updateInfo" class="tab-content card">
+      <h2>Dados Pessoais</h2>
+      <form id="updateProfileForm">
+        <div class="form-group"><label>Nome</label><input type="text" id="newName" /></div>
+        <div class="form-group"><label>Email</label><input type="email" id="newEmail" /></div>
+        <div class="form-group"><label>Função</label><input type="text" id="userRoleDisplay" readonly /></div>
+        <button type="submit" class="btn-primary">Salvar Alterações</button>
+      </form>
+    </div>
+
+    <div id="changePass" class="tab-content card" style="display:none;">
+      <h2>Segurança</h2>
+      <form id="updatePasswordForm">
+        <div class="form-group"><label>Nova Senha</label><input type="password" id="newPassword" required /></div>
+        <button type="submit" class="btn-success">Alterar Senha</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="authGuard.js"></script>
+  <script src="utils.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

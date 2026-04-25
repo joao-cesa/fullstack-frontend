@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Conta - ImobCRUD</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <div class="card">
+      <h1>ImobCRUD</h1>
+      <h2>Criar Conta</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerName">Nome Completo</label>
+          <input type="text" id="registerName" required />
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required />
+          <div id="emailError" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Senha</label>
+          <input type="password" id="registerPassword" required />
+        </div>
+        <button type="submit" class="btn-primary">Cadastrar</button>
+      </form>
+      <p class="footer-link">Já tem uma conta? <a href="index.html">Faça Login</a></p>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

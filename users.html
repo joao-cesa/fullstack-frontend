@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Usuários - ImobCRUD</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <span class="logo">ImobCRUD</span>
+    <div class="nav-links">
+      <a href="properties.html">Imóveis</a>
+      <a href="users.html" class="active">Usuários</a>
+      <a href="profile.html">Meu Perfil</a>
+      <button id="logoutBtn" class="btn-logout-link">Sair</button>
+    </div>
+  </nav>
+
+  <div class="container main-content">
+    <div class="dashboard-header">
+      <h1>Gerenciar Usuários</h1>
+      <button id="openModalBtn" class="btn-primary">+ Novo Usuário</button>
+    </div>
+    <div id="userModal" class="modal-overlay">
+      <div class="modal-content">
+        <h2 id="formTitle">Cadastrar Novo Usuário</h2>
+        <form id="userForm">
+          <input type="hidden" id="userId" />
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" id="userName" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="userEmail" required />
+            <div id="emailError" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label>Senha</label>
+            <input type="password" id="userPassword" />
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <select id="userRole">
+              <option value="user">Usuário</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+          <div class="form-actions" style="display: flex; gap: 10px;">
+            <button type="submit" class="btn-success">Salvar</button>
+            <button type="button" id="closeModalBtn" class="btn-secondary">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="searchBox" class="search-box" placeholder="Buscar usuários...">
+        <select id="filterRole" class="search-box">
+          <option value="">Todas as Roles</option>
+          <option value="user">Usuário</option>
+          <option value="admin">Administrador</option>
+        </select>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="usersList"></tbody>
+      </table>
+      <div id="pagination" class="pagination"></div>
+    </div>
+  </div>
+  <script src="authGuard.js"></script>
+  <script src="utils.js"></script>
+  <script src="users.js"></script>
+</body>
+
+</html>
